@@ -1,0 +1,32 @@
+$color-navy: #22577E;
+$color-blue: #5584AC;
+$color-teal: #95D1CC;
+$color-beige: #f6f2d4;
+
+
+body,
+html {
+  height: 100%;
+}
+
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+}
+
+.bg-featured-blog {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 15rem;
+}
+
+.navbar-background{
+  background-color: $color-navy;
+}
