@@ -41,7 +41,7 @@ calculateButton.addEventListener('click', firstNameDisplay);
 
 //State Tax Function
 
-let stateTax ="";
+
 
 function stateTaxPercentage(state, grossIncome) {
 
@@ -67,7 +67,7 @@ function stateTaxPercentage(state, grossIncome) {
 
 //Federal Tax Function
 
-function taxation(grossIncome) {
+function taxation(state, grossIncome) {
 
     //Federal Tax Brackets
 
@@ -102,10 +102,11 @@ function taxation(grossIncome) {
 
 
     //Federal Tax Formula
-    let federalTax = (grossIncome * federalTaxBracket);
+    let totalTax = (grossIncome * (federalTaxBracket + stateTaxPercentage(state, grossIncome)));
+
 
     //Net Income Formula
-    let netIncome = grossIncome - federalTax;
+    let netIncome = grossIncome - totalTax;
 
 
     return netIncome;
