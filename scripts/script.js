@@ -62,10 +62,82 @@ function stateTaxPercentage(state, grossIncome) {
         }
     }
 
+    //Arkansas State
+
+
+
+    //Arizona State
+
+    if(state = "AZ"){
+
+        if(grossIncome <= 27808){
+
+            stateTax = .0259;
+        }
+        else if((grossIncome >27808)&&(grossIncome <= 55615)){
+
+            stateTax = .0334;
+        }
+        else if((grossIncome > 55615)&&(grossIncome <= 166843)){
+
+            stateTax = .0417;
+        }
+        else if((grossIncome >166843)&&(grossIncome <= 250000)){
+
+            stateTax = .045;
+        }
+        else{ stateTax = .01;}
+    }
+
+    //California State
+
+    if(state = "CA"){
+
+        if(grossIncome <= 9325){
+
+            stateTax = 0.01;
+        }
+        else if((grossIncome >9325)&&(grossIncome <= 22107)){
+
+            stateTax = 0.02; 
+        }
+        else if((grossIncome > 22107)&&(grossIncome <=34892)){
+
+            stateTax = 0.04; 
+        }
+        else if((grossIncome > 34892)&&(grossIncome <=48435)){
+
+            stateTax = 0.06;
+        }
+        else if((grossIncome > 48435)&&(grossIncome <=61214)){
+
+            stateTax = 0.08; 
+        }
+        else if((grossIncome >61214)&&(grossIncome <=312686)){
+
+            stateTax = 0.093;
+        }
+        else if((grossIncome >312686)&&(grossIncome <=375221)){
+
+            stateTax = 0.103;
+        }
+        else if((grossIncome >375221)&&(grossIncome <= 625369)){
+
+            stateTax = 0.113;
+        }
+        else{ stateTax = 0.123; }
+    }
+
     return stateTax
+
+
 }
 
+
+///////////////////////////////////
 //Federal Tax Function
+
+let netIncome = ""
 
 function taxation(state, grossIncome) {
 
@@ -108,11 +180,14 @@ function taxation(state, grossIncome) {
     //Net Income Formula
     let netIncome = grossIncome - totalTax;
 
+    console.log(grossIncome +" and "+ state);
+
 
     return netIncome;
 
+ 
 }
 
 
 
-
+calculateButton.addEventListener('click', taxation);
